@@ -10,11 +10,15 @@ set(GIT_SOURCES src/ContextGrep.cpp)
 set(TEST_SOURCES tests/test_contextgrep.cpp)
 
 # Executable targets
-add_executable(bin/d-grep ${SOURCES})
-add_executable(bin/TestContextGrep ${TEST_SOURCES})
+add_executable(d-grep ${SOURCES})
+add_executable(TestContextGrep ${TEST_SOURCES})
+
+# Set the output directory for executables
+set_target_properties(d-grep PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+set_target_properties(TestContextGrep PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 
 # Link libraries
-target_link_libraries(MyTestContextGrepExecutable PRIVATE CppUnit::CppUnit)
+target_link_libraries(TestContextGrep PRIVATE CppUnit::CppUnit)
 
 # Enable testing
 enable_testing()
