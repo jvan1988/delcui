@@ -1,0 +1,23 @@
+name: TestContextGrep
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up CMake
+      uses: lukka/run-cmake@v2
+      with:
+        cmakeListsOrSettingsJson: 'CMakeLists.txt'  # Adjust this if your CMakeLists.txt is in a different location
+
+    - name: Build
+      run: cmake --build build --config Debug
+
+    - name: Run tests
+      run: build/tests/TestContextGrep
+

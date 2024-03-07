@@ -1,0 +1,16 @@
+#!/bin/bash
+
+CXXFLAGS="-std=c++11 -Wall -Wextra -pedantic"  # Add any additional flags you need
+
+# Add CppUnit flags
+CPPUNIT_INCLUDE_DIR="/usr/include/cppunit"
+CPPUNIT_LIB_DIR="/usr/lib"
+
+# Check if CppUnit is installed
+if [ -d "$CPPUNIT_INCLUDE_DIR" ] && [ -d "$CPPUNIT_LIB_DIR" ]; then
+    CXXFLAGS+=" -I$CPPUNIT_INCLUDE_DIR"
+    LDFLAGS+=" -L$CPPUNIT_LIB_DIR -lcppunit"
+    echo "CppUnit found. Adding flags to CXXFLAGS and LDFLAGS."
+else
+    echo "CppUnit not found. Make sure to install it and provide correct paths."
+fi
