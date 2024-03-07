@@ -34,6 +34,7 @@ include(FetchContent)
 FetchContent_Declare(
   cppunit
   GIT_REPOSITORY https://github.com/jvan1988/delcui.git
+  GIT_TAG        main
 )
 FetchContent_MakeAvailable(cppunit)
 
