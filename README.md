@@ -17,19 +17,21 @@ ContextGrep is a tool designed to provide additional context around matches when
 
 - Search for a specified pattern in a text file.
 - Print lines containing the pattern along with contextual lines.
-- Customizable context size. Matches overlapping within the context size will have their section merged in with the previous section
+- Customizable context size. 
+- Matches overlapping within the context size given will be combined into one output
 
 ## Usage
 
 ### Command-line Options
 
-	./ContextGrep [OPTIONS] PATTERN FILE
+	./d-grep [OPTIONS] PATTERN FILE
 
 Replace OPTIONS, PATTERN, and FILE with your desired parameters.
 
 ### Options
 
 - -C N: Print N lines of output context.
+- -C  : Print Nothing
 
 ## Building
 
@@ -37,8 +39,8 @@ Follow these steps to build ContextGrep:
 
 ### Clone the repository:
 
-	git clone https://github.com/your-username/ContextGrep.git
-	cd ContextGrep
+	git clone https://github.com/your-username/delcui.git
+	cd delcui
 
 ### Build the executable:
 
@@ -46,4 +48,4 @@ Follow these steps to build ContextGrep:
 
 ### Run the executable:
 
-	./bin/ContextGrep -C 2 "your_pattern" your_file.txt
+	./bin/d-grep -C 2 "your_pattern" your_file.txt
