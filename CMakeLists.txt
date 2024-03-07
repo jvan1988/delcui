@@ -4,24 +4,17 @@ project(MyContextGrepProject)
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 11)
 
-# Add the main source files
-set(SOURCES
-    src/ContextGrep.cpp
-    src/main.cpp
-)
+# Source files for your project
+set(SOURCES src/main.cpp)
+set(GIT_SOURCES src/ContextGrep.cpp)
+set(TEST_SOURCES tests/test_contextgrep.cpp)
 
-# Add an executable for the main application
-add_executable(GitContextGrep ${SOURCES})
+# Executable targets
+add_executable(bin/d-grep ${SOURCES})
+add_executable(bin/TestContextGrep ${TEST_SOURCES})
 
-# Add an executable for tests
-add_executable(TestContextGrep
-    tests/TestContextGrep.cpp
-    src/ContextGrep.cpp
-)
-
-# Set include directories
-target_include_directories(ContextGrep PRIVATE include)
-target_include_directories(TestContextGrep PRIVATE include)
+# Link libraries
+target_link_libraries(MyTestContextGrepExecutable PRIVATE CppUnit::CppUnit)
 
 # Enable testing
 enable_testing()
