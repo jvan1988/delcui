@@ -29,21 +29,21 @@ Replace OPTIONS, PATTERN, and FILE with your desired parameters.
 
 ### Options
 
-- -C, --context N: Print N lines of output context.
+- -C N: Print N lines of output context.
 
 ## Building
 
 Follow these steps to build ContextGrep:
 
-###Clone the repository:
+### Clone the repository:
 
 	git clone https://github.com/your-username/ContextGrep.git
 	cd ContextGrep
 
-###Build the executable:
+### Build the executable:
 
 	make
 
-###Run the executable:
+### Run the executable:
 
 	./bin/ContextGrep -C 2 "your_pattern" your_file.txt
