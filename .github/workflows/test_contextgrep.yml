@@ -1,23 +1,24 @@
-name: TestContextGrep
+name: Build and Test
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up CMake
-      uses: lukka/run-cmake@v2
-      with:
-        cmakeListsOrSettingsJson: 'CMakeLists.txt'  # Adjust this if your CMakeLists.txt is in a different location
+    - name: Configure CMake
+      run: cmake -S . -B build
 
     - name: Build
-      run: cmake --build build --config Debug
+      run: cmake --build build
 
     - name: Run tests
-      run: build/tests/TestContextGrep
+      run: cmake --build build --target test
 
