@@ -7,9 +7,9 @@ set(CMAKE_CXX_STANDARD 11)
 # Source files for your project
 set(SOURCES src/main.cpp)
 set(GIT_SOURCES src/ContextGrep.cpp)
-set(TEST_SOURCES tests/test_contextgrep.cpp)
+set(TEST_SOURCES tests/TestContextGrep.cpp)
 
-# Executable targets
+# Executable targets in the bin directory
 add_executable(g-d-grep ${SOURCES})
 add_executable(g-TestContextGrep ${TEST_SOURCES})
 
