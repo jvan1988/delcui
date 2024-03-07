@@ -11,7 +11,7 @@ set(SOURCES
 )
 
 # Add an executable for the main application
-add_executable(ContextGrep ${SOURCES})
+add_executable(GitContextGrep ${SOURCES})
 
 # Add an executable for tests
 add_executable(TestContextGrep
